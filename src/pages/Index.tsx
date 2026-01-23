@@ -59,50 +59,67 @@ const Index = () => {
         {/* Event Details */}
         <EventDetails />
         
-        {/* Photo 1 - Right aligned */}
+        /* {/* Photo 1 - Right aligned */}
         <section className="py-12 px-6">
           <div className="container max-w-5xl mx-auto">
             <div className="flex justify-end">
               <PhotoFrame caption="ذكريات جميلة" className="mr-0 md:mr-12" />
             </div>
           </div>
+        </section> */
+
+
+        {/* Photos Grid (2x2) */}
+        <section className="py-12 px-6">
+          <div className="container max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+              <PhotoFrame caption="ذكريات جميلة" />
+              <PhotoFrame caption="لحظات الخطوبة" />
+              <PhotoFrame caption="معاً نبني المستقبل" />
+              <PhotoFrame caption="في انتظاركم" />
+            </div>
+          </div>
         </section>
+
+
         
         {/* Countdown */}
         <Countdown />
         
-        {/* Photo 2 - Left aligned */}
+        /* {/* Photo 2 - Left aligned */}
         <section className="py-12 px-6">
           <div className="container max-w-5xl mx-auto">
             <div className="flex justify-start">
               <PhotoFrame caption="لحظات الخطوبة" className="ml-0 md:ml-12" />
             </div>
           </div>
-        </section>
+        </section> */
         
         {/* Location */}
         <LocationSection />
         
-        {/* Photo 3 - Center */}
+        /* {/* Photo 3 - Center */}
         <section className="py-12 px-6">
           <div className="container max-w-5xl mx-auto">
             <div className="flex justify-center">
               <PhotoFrame caption="معاً نبني المستقبل" />
             </div>
           </div>
-        </section>
+        </section> */
         
         {/* RSVP Form */}
         <RSVPForm />
         
-        {/* Photo 4 - Right aligned */}
+        /* {/* Photo 4 - Right aligned */}
         <section className="py-12 px-6">
           <div className="container max-w-5xl mx-auto">
             <div className="flex justify-end">
               <PhotoFrame caption="في انتظاركم" className="mr-0 md:mr-20" />
             </div>
           </div>
-        </section>
+        </section> */
+
+
         
         {/* Footer */}
         <Footer />
