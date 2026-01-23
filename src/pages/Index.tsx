@@ -59,18 +59,29 @@ const Index = () => {
         {/* Event Details */}
         <EventDetails />
         
-
-        {/* Photos Grid (2x2) */}
-        <section className="py-12 px-6">
-          <div className="container max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
-              <PhotoFrame caption="ذكريات جميلة" />
-              <PhotoFrame caption="لحظات الخطوبة" />
-              <PhotoFrame caption="معاً نبني المستقبل" />
-              <PhotoFrame caption="في انتظاركم" />
-            </div>
+      {/* Photos Grid (2x2) */}
+      <section className="py-12 px-6">
+        <div className="container max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+            <PhotoFrame
+              caption="ذكريات جميلة"
+              src={`${import.meta.env.BASE_URL}photos/ay1.jpg`}
+            />
+            <PhotoFrame
+              caption="لحظات الخطوبة"
+              src={`${import.meta.env.BASE_URL}photos/ay1.jpg`}
+            />
+            <PhotoFrame
+              caption="معاً نبني المستقبل"
+              src={`${import.meta.env.BASE_URL}photos/ay1.jpg`}
+            />
+            <PhotoFrame
+              caption="في انتظاركم"
+              src={`${import.meta.env.BASE_URL}photos/ay1.jpg`}
+            />
           </div>
-        </section>
+        </div>
+      </section>
 
 
         
