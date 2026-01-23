@@ -8,7 +8,8 @@ const MusicPlayer = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   // Placeholder music URL - replace with actual music file
-  const musicUrl = `${import.meta.env.BASE_URL}Majed.mp3`;
+  import majedMp3 from "@/assets/majed.mp3";
+  const musicUrl = majedMp3;
 
 
   useEffect(() => {
