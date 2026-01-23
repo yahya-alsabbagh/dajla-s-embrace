@@ -4,8 +4,8 @@ import { Calendar, Clock, MapPin } from "lucide-react";
 const EventDetails = () => {
   // Placeholder values - easily editable
   const eventDetails = {
-    date: "السبت 9 شوال 1447",
-    dateGregorian: "28 مارس 2026",
+    date: "28 مارس 2026",
+    dateGregorian: "السبت 9 شوال 1447",
     time: "5:00 مساءً",
     venue: "قاعة الريان الملكية",
     address: "بغداد - الوزيرية",
