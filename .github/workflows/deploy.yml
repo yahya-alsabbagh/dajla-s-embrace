@@ -28,7 +28,13 @@ jobs:
           cache: npm
 
       - name: Install
-        run: npm ci
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci --legacy-peer-deps
+          else
+            npm install --legacy-peer-deps
+          fi
+
 
       - name: Build
         run: npm run build
