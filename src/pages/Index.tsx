@@ -64,20 +64,20 @@ const Index = () => {
         <div className="container max-w-5xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
             <PhotoFrame
-              caption="ذكريات جميلة"
-              src={`${import.meta.env.BASE_URL}photos/1.JPG`}
+              caption="ضحكتها الحلوة"
+              src={`${import.meta.env.BASE_URL}1.JPG`}
             />
             <PhotoFrame
               caption="لحظات الخطوبة"
-              src={`${import.meta.env.BASE_URL}photos/1.JPG`}
+              src={`${import.meta.env.BASE_URL}1.JPG`}
             />
             <PhotoFrame
               caption="معاً"
-              src={`${import.meta.env.BASE_URL}photos/1.JPG`}
+              src={`${import.meta.env.BASE_URL}/1.JPG`}
             />
             <PhotoFrame
               caption="في انتظاركم"
-              src={`${import.meta.env.BASE_URL}photos/1.JPG`}
+              src={`${import.meta.env.BASE_URL}1.JPG`}
             />
           </div>
         </div>
