@@ -42,30 +42,32 @@ const LocationSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="wedding-card text-center backdrop-blur-md"
         >
-          {/* ✅ Map Preview */}
-          <div className="relative h-48 md:h-64 rounded-xl overflow-hidden mb-6 bg-tigris/10">
-            <img
-              src={staticMapUrl}
-              alt="معاينة خريطة الموقع"
-              className="absolute inset-0 w-full h-full object-cover"
-              loading="lazy"
-            />
 
+
+
+          
+                    
+          {/* ✅ Map Preview (Google Embed) */}
+          <div className="relative h-48 md:h-64 rounded-xl overflow-hidden mb-6 bg-tigris/10">
+            <iframe
+              title="خريطة الموقع"
+              src="https://www.google.com/maps?q=33.3152,44.3940&z=15&output=embed"
+              className="absolute inset-0 w-full h-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          
             {/* Overlay خفيف حتى ينسجم مع الثيم */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
-
-            {/* Badge صغيرة */}
-            <div className="absolute top-3 right-3 flex items-center gap-2 bg-card/85 backdrop-blur px-3 py-1.5 rounded-full border border-gold/20">
-              <MapPin className="w-4 h-4 text-tigris" />
-              <span className="text-sm font-semibold text-foreground/90">
-                معاينة الموقع
-              </span>
-            </div>
-
+          
             {/* Decorative borders */}
             <div className="absolute inset-2 border border-accent/30 rounded-lg pointer-events-none" />
           </div>
 
+
+
+
+          
           {/* Venue Details */}
           <div className="space-y-3 mb-8">
             <h3 className="text-2xl font-bold text-foreground">{venueInfo.name}</h3>
