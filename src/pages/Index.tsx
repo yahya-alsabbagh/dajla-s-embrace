@@ -59,15 +59,6 @@ const Index = () => {
         {/* Event Details */}
         <EventDetails />
         
-        /* {/* Photo 1 - Right aligned */}
-        <section className="py-12 px-6">
-          <div className="container max-w-5xl mx-auto">
-            <div className="flex justify-end">
-              <PhotoFrame caption="ذكريات جميلة" className="mr-0 md:mr-12" />
-            </div>
-          </div>
-        </section> */
-
 
         {/* Photos Grid (2x2) */}
         <section className="py-12 px-6">
@@ -86,39 +77,13 @@ const Index = () => {
         {/* Countdown */}
         <Countdown />
         
-        /* {/* Photo 2 - Left aligned */}
-        <section className="py-12 px-6">
-          <div className="container max-w-5xl mx-auto">
-            <div className="flex justify-start">
-              <PhotoFrame caption="لحظات الخطوبة" className="ml-0 md:ml-12" />
-            </div>
-          </div>
-        </section> */
         
         {/* Location */}
         <LocationSection />
         
-        /* {/* Photo 3 - Center */}
-        <section className="py-12 px-6">
-          <div className="container max-w-5xl mx-auto">
-            <div className="flex justify-center">
-              <PhotoFrame caption="معاً نبني المستقبل" />
-            </div>
-          </div>
-        </section> */
         
         {/* RSVP Form */}
         <RSVPForm />
-        
-        /* {/* Photo 4 - Right aligned */}
-        <section className="py-12 px-6">
-          <div className="container max-w-5xl mx-auto">
-            <div className="flex justify-end">
-              <PhotoFrame caption="في انتظاركم" className="mr-0 md:mr-20" />
-            </div>
-          </div>
-        </section> */
-
 
         
         {/* Footer */}
