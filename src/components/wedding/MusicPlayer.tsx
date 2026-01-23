@@ -8,7 +8,7 @@ const MusicPlayer = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   // Placeholder music URL - replace with actual music file
-  const musicUrl = "/ماجد.mp3";
+  const musicUrl = "/majed.mp3";
 
 
   useEffect(() => {
