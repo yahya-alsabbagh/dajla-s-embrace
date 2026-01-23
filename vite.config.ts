@@ -4,7 +4,13 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/dajla-s-embrace/",
+  base: "/dajla-s-embrace/"
+
+export default defineConfig({
+base: "/dajla-s-embrace/",
+  // باقي الإعدادات…
+})
+
 });
 
 
