@@ -1,3 +1,4 @@
+import MajedMp3 from "@/assets/Majed.mp3";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Volume2, VolumeX, Music } from "lucide-react";
@@ -8,7 +9,6 @@ const MusicPlayer = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   // Placeholder music URL - replace with actual music file
-  import MajedMp3 from "@/assets/Majed.mp3";
   const musicUrl = MajedMp3;
 
 
