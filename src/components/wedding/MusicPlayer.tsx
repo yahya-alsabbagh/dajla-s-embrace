@@ -8,7 +8,8 @@ const MusicPlayer = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   // Placeholder music URL - replace with actual music file
-  const musicUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
+  const musicUrl = "/ماجد.mp3";
+
 
   useEffect(() => {
     const handleFirstInteraction = () => {
