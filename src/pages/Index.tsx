@@ -7,19 +7,49 @@ import RSVPForm from "@/components/wedding/RSVPForm";
 import Footer from "@/components/wedding/Footer";
 import MusicPlayer from "@/components/wedding/MusicPlayer";
 import patternOverlay from "@/assets/pattern-overlay.png";
+import heroImage from "@/assets/hero-tigris.jpg";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background relative overflow-x-hidden">
-      {/* Global Pattern Overlay */}
-      <div 
-        className="fixed inset-0 pointer-events-none opacity-[0.03] z-0"
-        style={{
-          backgroundImage: `url(${patternOverlay})`,
-          backgroundRepeat: 'repeat',
-          backgroundSize: '200px',
-        }}
-      />
+    <div className="relative overflow-x-hidden min-h-screen" style={{ backgroundColor: '#f5f0e8' }}>
+      {/* Fixed Full-Page Background - Image at top, gradient continues */}
+      <div className="fixed inset-0 w-full h-full">
+        {/* Hero image - positioned at top */}
+        <div 
+          className="absolute top-0 left-0 right-0 h-screen"
+          style={{
+            backgroundImage: `url(${heroImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+        
+        {/* Gradient that blends image into warm cream/ivory */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: `linear-gradient(
+              to bottom,
+              transparent 0%,
+              transparent 40%,
+              rgba(245, 240, 232, 0.3) 60%,
+              rgba(245, 240, 232, 0.7) 80%,
+              rgba(245, 240, 232, 0.9) 100%
+            )`
+          }}
+        />
+        
+        {/* Subtle pattern continues across page */}
+        <div 
+          className="absolute inset-0 pointer-events-none opacity-[0.02]"
+          style={{
+            backgroundImage: `url(${patternOverlay})`,
+            backgroundRepeat: 'repeat',
+            backgroundSize: '200px',
+          }}
+        />
+      </div>
       
       {/* Main Content */}
       <main className="relative z-10">
@@ -29,33 +59,49 @@ const Index = () => {
         {/* Event Details */}
         <EventDetails />
         
-        {/* Photo 1 */}
+        {/* Photo 1 - Right aligned */}
         <section className="py-12 px-6">
-          <PhotoFrame caption="ذكريات جميلة" />
+          <div className="container max-w-5xl mx-auto">
+            <div className="flex justify-end">
+              <PhotoFrame caption="ذكريات جميلة" className="mr-0 md:mr-12" />
+            </div>
+          </div>
         </section>
         
         {/* Countdown */}
         <Countdown />
         
-        {/* Photo 2 */}
+        {/* Photo 2 - Left aligned */}
         <section className="py-12 px-6">
-          <PhotoFrame caption="لحظات الخطوبة" />
+          <div className="container max-w-5xl mx-auto">
+            <div className="flex justify-start">
+              <PhotoFrame caption="لحظات الخطوبة" className="ml-0 md:ml-12" />
+            </div>
+          </div>
         </section>
         
         {/* Location */}
         <LocationSection />
         
-        {/* Photo 3 */}
+        {/* Photo 3 - Center */}
         <section className="py-12 px-6">
-          <PhotoFrame caption="معاً نبني المستقبل" />
+          <div className="container max-w-5xl mx-auto">
+            <div className="flex justify-center">
+              <PhotoFrame caption="معاً نبني المستقبل" />
+            </div>
+          </div>
         </section>
         
         {/* RSVP Form */}
         <RSVPForm />
         
-        {/* Photo 4 */}
+        {/* Photo 4 - Right aligned */}
         <section className="py-12 px-6">
-          <PhotoFrame caption="في انتظاركم" />
+          <div className="container max-w-5xl mx-auto">
+            <div className="flex justify-end">
+              <PhotoFrame caption="في انتظاركم" className="mr-0 md:mr-20" />
+            </div>
+          </div>
         </section>
         
         {/* Footer */}

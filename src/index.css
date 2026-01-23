@@ -27,8 +27,8 @@
     --secondary-foreground: 40 30% 97%;
 
     /* Subtle Gold - Accent */
-    --accent: 42 65% 55%;
-    --accent-foreground: 30 25% 15%;
+    --accent: 42 85% 45%;
+    --accent-foreground: 30 25% 10%;
 
     --muted: 40 20% 92%;
     --muted-foreground: 30 15% 45%;
@@ -47,8 +47,9 @@
     --tigris-blue: 200 35% 55%;
     --tigris-blue-light: 200 40% 85%;
     --olive: 75 25% 40%;
+    --gold: 42 90% 42%;
+    --gold-bright: 45 100% 50%;
     --olive-light: 75 30% 85%;
-    --gold: 42 70% 50%;
     --gold-light: 42 60% 85%;
     --warm-brown: 30 25% 25%;
     --cream: 45 40% 92%;
@@ -56,14 +57,14 @@
     /* Gradients */
     --gradient-hero: linear-gradient(180deg, 
       hsl(40 30% 97% / 0) 0%, 
-      hsl(40 30% 97% / 0.3) 30%,
-      hsl(40 30% 97% / 0.7) 70%,
-      hsl(40 30% 97%) 100%
+      hsl(40 30% 97% / 0.2) 40%,
+      hsl(40 30% 97% / 0.6) 80%,
+      hsl(40 30% 97% / 0.85) 100%
     );
-    --gradient-gold: linear-gradient(135deg, 
-      hsl(42 65% 55%) 0%, 
-      hsl(42 75% 65%) 50%,
-      hsl(42 65% 55%) 100%
+    --gradient-gold: linear-gradient(135deg,
+      hsl(42 100% 40%) 0%, 
+      hsl(45 100% 55%) 50%,
+      hsl(42 100% 40%) 100%
     );
     --gradient-card: linear-gradient(180deg,
       hsl(40 35% 98%) 0%,
@@ -125,9 +126,9 @@
 @layer components {
   /* Wedding Card Styles */
   .wedding-card {
-    @apply bg-card rounded-2xl p-6 md:p-8;
+    @apply bg-card/85 backdrop-blur-md rounded-2xl p-6 md:p-8;
     box-shadow: var(--shadow-card);
-    background: var(--gradient-card);
+    border: 1px solid hsl(var(--gold) / 0.15);
   }
 
   /* Photo Frame */
@@ -144,12 +145,19 @@
     border-radius: inherit;
   }
 
-  /* Gold Text */
+  /* Gold Text - Strong and Vibrant */
   .text-gold-gradient {
-    background: var(--gradient-gold);
+    background: linear-gradient(135deg, 
+      hsl(38 100% 35%) 0%, 
+      hsl(45 100% 50%) 25%,
+      hsl(42 100% 55%) 50%,
+      hsl(45 100% 50%) 75%,
+      hsl(38 100% 35%) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    filter: drop-shadow(0 2px 4px rgba(180, 140, 50, 0.3));
   }
 
   /* Pattern Overlay */
@@ -169,7 +177,7 @@
   .decorative-divider::after {
     content: '';
     @apply h-px flex-1 max-w-24;
-    background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.5), transparent);
+    background: linear-gradient(90deg, transparent, hsl(42 100% 45% / 0.7), transparent);
   }
 
   /* RSVP Status Button */

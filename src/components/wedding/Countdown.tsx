@@ -39,8 +39,6 @@ const Countdown = () => {
 
   return (
     <section className="py-20 px-6 relative">
-      <div className="pattern-overlay" />
-      
       <div className="container max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,7 +47,7 @@ const Countdown = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="section-title">العد التنازلي</h2>
+          <h2 className="section-title drop-shadow-sm">العد التنازلي</h2>
           <p className="section-subtitle">لليلة العمر</p>
         </motion.div>
 
@@ -69,12 +67,12 @@ const Countdown = () => {
               transition={{ duration: 0.4, delay: 0.1 * index }}
               className="text-center"
             >
-              <div className="wedding-card w-20 h-24 md:w-28 md:h-32 flex flex-col items-center justify-center">
-                <span className="text-3xl md:text-5xl font-bold text-gold-gradient">
+              <div className="wedding-card backdrop-blur-md w-20 h-24 md:w-28 md:h-32 flex flex-col items-center justify-center">
+                <span className="text-3xl md:text-5xl font-bold text-gold-gradient drop-shadow-lg">
                   {unit.value.toString().padStart(2, "0")}
                 </span>
               </div>
-              <p className="mt-3 text-sm md:text-base text-muted-foreground font-medium">
+              <p className="mt-3 text-sm md:text-base text-foreground font-semibold drop-shadow-sm">
                 {unit.label}
               </p>
             </motion.div>
@@ -90,9 +88,9 @@ const Countdown = () => {
           className="text-center mt-16"
         >
           <div className="decorative-divider">
-            <span className="text-accent">❧</span>
+            <span className="text-accent drop-shadow-md">❧</span>
           </div>
-          <p className="text-lg text-foreground/80 italic">
+          <p className="text-lg text-foreground/90 italic font-medium drop-shadow-sm">
             وجودكم يكمّل بهجتنا
           </p>
         </motion.div>

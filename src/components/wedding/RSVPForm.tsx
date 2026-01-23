@@ -46,8 +46,6 @@ const RSVPForm = () => {
 
   return (
     <section className="py-20 px-6 relative">
-      <div className="pattern-overlay" />
-      
       <div className="container max-w-xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,7 +54,7 @@ const RSVPForm = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="section-title">تأكيد الحضور</h2>
+          <h2 className="section-title drop-shadow-sm">تأكيد الحضور</h2>
           <p className="section-subtitle">نسعد بتأكيد حضوركم</p>
         </motion.div>
 
@@ -69,11 +67,11 @@ const RSVPForm = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
               onSubmit={handleSubmit}
-              className="wedding-card space-y-6"
+              className="wedding-card space-y-6 backdrop-blur-md"
             >
               {/* Name Field */}
               <div className="space-y-2">
-                <Label htmlFor="name" className="text-foreground font-medium">
+                <Label htmlFor="name" className="text-foreground font-semibold">
                   الاسم الكريم
                 </Label>
                 <Input
@@ -89,7 +87,7 @@ const RSVPForm = () => {
 
               {/* Guest Count */}
               <div className="space-y-2">
-                <Label htmlFor="guests" className="text-foreground font-medium">
+                <Label htmlFor="guests" className="text-foreground font-semibold">
                   عدد الحاضرين
                 </Label>
                 <Input
@@ -105,7 +103,7 @@ const RSVPForm = () => {
 
               {/* Status Selection */}
               <div className="space-y-3">
-                <Label className="text-foreground font-medium">
+                <Label className="text-foreground font-semibold">
                   هل ستحضر؟
                 </Label>
                 <div className="grid grid-cols-3 gap-3">
@@ -124,7 +122,7 @@ const RSVPForm = () => {
                         }`}
                       >
                         <Icon className="w-5 h-5" />
-                        <span className="font-medium">{option.label}</span>
+                        <span className="font-semibold">{option.label}</span>
                       </motion.button>
                     );
                   })}
@@ -140,7 +138,7 @@ const RSVPForm = () => {
                 <Button
                   type="submit"
                   disabled={!name || !status}
-                  className="w-full h-14 text-lg bg-gradient-to-r from-accent to-gold hover:from-accent/90 hover:to-gold/90 text-accent-foreground rounded-xl shadow-lg disabled:opacity-50"
+                  className="w-full h-14 text-lg bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent/70 text-accent-foreground font-bold rounded-xl shadow-lg disabled:opacity-50"
                 >
                   <Send className="w-5 h-5 ml-2" />
                   إرسال التأكيد
@@ -153,13 +151,13 @@ const RSVPForm = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="wedding-card text-center py-12"
+              className="wedding-card text-center py-12 backdrop-blur-md"
             >
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                className="w-20 h-20 mx-auto mb-6 rounded-full bg-secondary/20 flex items-center justify-center"
+                className="w-20 h-20 mx-auto mb-6 rounded-full bg-secondary/20 flex items-center justify-center border border-secondary/30"
               >
                 <Check className="w-10 h-10 text-secondary" />
               </motion.div>
@@ -170,7 +168,7 @@ const RSVPForm = () => {
                 نتطلع للقائكم في ليلتنا المميزة
               </p>
               <div className="decorative-divider mt-8">
-                <span className="text-accent text-2xl">❧</span>
+                <span className="text-accent text-2xl drop-shadow-md">❧</span>
               </div>
             </motion.div>
           )}
