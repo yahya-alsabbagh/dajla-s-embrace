@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const LocationSection = () => {
   // Placeholder - replace with actual Google Maps link
-  const mapsLink = "https://maps.google.com/?q=Baghdad,Iraq";
+  const mapsLink = "https://maps.app.goo.gl/KMZzM5iMS4KdR95p9?g_st=ic";
   
   const venueInfo = {
     name: "قاعة النخيل الكبرى",
