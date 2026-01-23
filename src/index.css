@@ -1,96 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Wedding Invitation Design System - Iraqi Heritage Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Wedding Colors - Inspired by Tigris River & Baghdad Heritage */
+    --background: 40 30% 97%; /* Warm ivory */
+    --foreground: 30 25% 20%; /* Warm brown text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 35% 96%;
+    --card-foreground: 30 25% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 35% 96%;
+    --popover-foreground: 30 25% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Tigris Blue - Primary */
+    --primary: 200 35% 50%;
+    --primary-foreground: 40 30% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Olive Green - Secondary */
+    --secondary: 75 25% 45%;
+    --secondary-foreground: 40 30% 97%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Subtle Gold - Accent */
+    --accent: 42 65% 55%;
+    --accent-foreground: 30 25% 15%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 40 20% 92%;
+    --muted-foreground: 30 15% 45%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 40 30% 85%;
+    --input: 40 30% 90%;
+    --ring: 42 65% 55%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
+    /* Custom Wedding Colors */
+    --ivory: 40 35% 95%;
+    --tigris-blue: 200 35% 55%;
+    --tigris-blue-light: 200 40% 85%;
+    --olive: 75 25% 40%;
+    --olive-light: 75 30% 85%;
+    --gold: 42 70% 50%;
+    --gold-light: 42 60% 85%;
+    --warm-brown: 30 25% 25%;
+    --cream: 45 40% 92%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(180deg, 
+      hsl(40 30% 97% / 0) 0%, 
+      hsl(40 30% 97% / 0.3) 30%,
+      hsl(40 30% 97% / 0.7) 70%,
+      hsl(40 30% 97%) 100%
+    );
+    --gradient-gold: linear-gradient(135deg, 
+      hsl(42 65% 55%) 0%, 
+      hsl(42 75% 65%) 50%,
+      hsl(42 65% 55%) 100%
+    );
+    --gradient-card: linear-gradient(180deg,
+      hsl(40 35% 98%) 0%,
+      hsl(40 30% 95%) 100%
+    );
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(30 25% 20% / 0.08);
+    --shadow-card: 0 8px 30px -5px hsl(30 25% 20% / 0.1);
+    --shadow-gold: 0 4px 20px -2px hsl(42 65% 55% / 0.3);
+
+    /* Sidebar - Keep defaults */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 30 20% 10%;
+    --foreground: 40 30% 95%;
+    --card: 30 20% 12%;
+    --card-foreground: 40 30% 95%;
+    --popover: 30 20% 12%;
+    --popover-foreground: 40 30% 95%;
+    --primary: 200 40% 60%;
+    --primary-foreground: 30 20% 10%;
+    --secondary: 75 30% 50%;
+    --secondary-foreground: 30 20% 10%;
+    --muted: 30 15% 20%;
+    --muted-foreground: 40 20% 70%;
+    --accent: 42 60% 50%;
+    --accent-foreground: 40 30% 95%;
+    --border: 30 15% 25%;
+    --input: 30 15% 25%;
+    --ring: 42 60% 50%;
   }
 }
 
@@ -99,7 +112,192 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
+  html {
+    scroll-behavior: smooth;
   }
+
+  body {
+    @apply bg-background text-foreground font-arabic antialiased;
+    direction: rtl;
+  }
+}
+
+@layer components {
+  /* Wedding Card Styles */
+  .wedding-card {
+    @apply bg-card rounded-2xl p-6 md:p-8;
+    box-shadow: var(--shadow-card);
+    background: var(--gradient-card);
+  }
+
+  /* Photo Frame */
+  .photo-frame {
+    @apply relative rounded-lg overflow-hidden;
+    box-shadow: var(--shadow-card);
+    border: 3px solid hsl(var(--gold-light));
+  }
+
+  .photo-frame::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none z-10;
+    border: 1px solid hsl(var(--gold) / 0.3);
+    border-radius: inherit;
+  }
+
+  /* Gold Text */
+  .text-gold-gradient {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Pattern Overlay */
+  .pattern-overlay {
+    @apply absolute inset-0 pointer-events-none opacity-[0.03];
+    background-image: url('@/assets/pattern-overlay.png');
+    background-repeat: repeat;
+    background-size: 200px;
+  }
+
+  /* Decorative Divider */
+  .decorative-divider {
+    @apply flex items-center justify-center gap-4 my-8;
+  }
+
+  .decorative-divider::before,
+  .decorative-divider::after {
+    content: '';
+    @apply h-px flex-1 max-w-24;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.5), transparent);
+  }
+
+  /* RSVP Status Button */
+  .rsvp-status-btn {
+    @apply px-4 py-3 rounded-xl border-2 transition-all duration-300 flex items-center justify-center gap-2;
+    @apply hover:scale-[1.02];
+  }
+
+  .rsvp-status-btn.selected {
+    @apply border-accent bg-accent/10;
+    box-shadow: var(--shadow-gold);
+  }
+
+  /* Music Button */
+  .music-btn {
+    @apply fixed bottom-6 left-6 z-50 w-14 h-14 rounded-full flex items-center justify-center;
+    @apply bg-card border-2 border-accent/30 transition-all duration-300;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .music-btn:hover {
+    @apply scale-110 border-accent;
+    box-shadow: var(--shadow-gold);
+  }
+
+  /* Section Title */
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold text-foreground mb-2;
+  }
+
+  .section-subtitle {
+    @apply text-muted-foreground text-lg;
+  }
+}
+
+@layer utilities {
+  .font-arabic {
+    font-family: 'Tajawal', sans-serif;
+  }
+
+  /* Animation utilities */
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  /* Stagger delays */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+}
+
+/* Keyframes */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Countdown flip animation */
+@keyframes flip {
+  0% { transform: rotateX(0); }
+  50% { transform: rotateX(-90deg); }
+  100% { transform: rotateX(0); }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--accent) / 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent));
 }
