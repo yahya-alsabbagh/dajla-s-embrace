@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import frameImage from "@/assets/photo-frame-1.jpg";
 
 interface PhotoFrameProps {
   caption?: string;
@@ -9,39 +8,46 @@ interface PhotoFrameProps {
 const PhotoFrame = ({ caption, className = "" }: PhotoFrameProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, scale: 0.9, y: 30 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.7 }}
       className={`relative ${className}`}
     >
-      <div className="photo-frame max-w-sm mx-auto bg-card p-3 rounded-xl shadow-lg">
-        {/* Frame border image as background */}
-        <div className="relative aspect-square rounded-lg overflow-hidden bg-cream">
-          {/* Placeholder - replace with actual photo */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center">
-                <span className="text-3xl">📷</span>
-              </div>
-              <p className="text-muted-foreground text-sm">
-                أضف صورتك هنا
-              </p>
-            </div>
-          </div>
-          {/* Golden corner decorations */}
-          <div className="absolute top-2 right-2 w-8 h-8 border-t-2 border-r-2 border-gold/40 rounded-tr-lg" />
-          <div className="absolute top-2 left-2 w-8 h-8 border-t-2 border-l-2 border-gold/40 rounded-tl-lg" />
-          <div className="absolute bottom-2 right-2 w-8 h-8 border-b-2 border-r-2 border-gold/40 rounded-br-lg" />
-          <div className="absolute bottom-2 left-2 w-8 h-8 border-b-2 border-l-2 border-gold/40 rounded-bl-lg" />
-        </div>
+      <div className="relative max-w-xs mx-auto">
+        {/* Outer glow */}
+        <div className="absolute -inset-2 bg-gradient-to-br from-accent/20 via-gold/10 to-accent/20 rounded-2xl blur-lg" />
         
-        {/* Caption */}
-        {caption && (
-          <p className="text-center text-foreground/70 mt-3 text-sm font-medium">
-            {caption}
-          </p>
-        )}
+        {/* Main frame */}
+        <div className="relative bg-card/90 backdrop-blur-md p-4 rounded-xl shadow-xl border border-gold/30">
+          {/* Photo area */}
+          <div className="relative aspect-[4/5] rounded-lg overflow-hidden bg-cream/50">
+            {/* Placeholder content */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center p-6">
+                <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-accent/20 flex items-center justify-center border border-accent/30">
+                  <span className="text-2xl">📷</span>
+                </div>
+                <p className="text-muted-foreground text-sm font-medium">
+                  أضف صورتك هنا
+                </p>
+              </div>
+            </div>
+            
+            {/* Golden corner decorations */}
+            <div className="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-accent/60 rounded-tr-md" />
+            <div className="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-accent/60 rounded-tl-md" />
+            <div className="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 border-accent/60 rounded-br-md" />
+            <div className="absolute bottom-3 left-3 w-6 h-6 border-b-2 border-l-2 border-accent/60 rounded-bl-md" />
+          </div>
+          
+          {/* Caption */}
+          {caption && (
+            <p className="text-center text-foreground/80 mt-3 text-sm font-semibold">
+              {caption}
+            </p>
+          )}
+        </div>
       </div>
     </motion.div>
   );
