@@ -51,7 +51,7 @@ const LocationSection = () => {
           <div className="relative h-48 md:h-64 rounded-xl overflow-hidden mb-6 bg-tigris/10">
             <iframe
               title="خريطة الموقع"
-              src="https://maps.app.goo.gl/KMZzM5iMS4KdR95p9?g_st=ic"
+              src="https://www.google.com/maps?q=قاعة%20الريان%20الملكية%20بغداد&z=15&output=embed"
               className="absolute inset-0 w-full h-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
