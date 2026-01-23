@@ -1,23 +1,32 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 
 const Countdown = () => {
-  // Placeholder date - easily editable
-  // بغداد + صيغة ISO صحيحة
-  const weddingDate = new Date("2026-03-28T17:00:00+03:00");
-  
+  // ✅ تاريخ صحيح + تايمزون بغداد (غيّره لاحقًا)
+  const weddingDate = useMemo(
+    () => new Date("2026-03-28T17:00:00+03:00"),
+    []
+  );
+
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
   useEffect(() => {
     const tick = () => {
-      const now = new Date();
-      const difference = weddingDate.getTime() - now.getTime();
-  
-      if (Number.isNaN(weddingDate.getTime())) return; // حماية
-  
+      const target = weddingDate.getTime();
+      if (Number.isNaN(target)) return;
+
+      const difference = target - Date.now();
+
       if (difference <= 0) {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
         return;
       }
-  
+
       setTimeLeft({
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
@@ -25,12 +34,11 @@ const Countdown = () => {
         seconds: Math.floor((difference / 1000) % 60),
       });
     };
-  
-    tick(); // يحدّث مباشرة بدون انتظار 1 ثانية
+
+    tick(); // تحديث مباشر
     const timer = setInterval(tick, 1000);
     return () => clearInterval(timer);
   }, [weddingDate]);
-
 
   const timeUnits = [
     { value: timeLeft.days, label: "يوم" },
@@ -71,7 +79,7 @@ const Countdown = () => {
             >
               <div className="wedding-card backdrop-blur-md w-20 h-24 md:w-28 md:h-32 flex flex-col items-center justify-center">
                 <span className="text-3xl md:text-5xl font-bold text-gold-gradient drop-shadow-lg">
-                  {unit.value.toString().padStart(2, "0")}
+                  {String(unit.value).padStart(2, "0")}
                 </span>
               </div>
               <p className="mt-3 text-sm md:text-base text-foreground font-semibold drop-shadow-sm">
@@ -81,7 +89,6 @@ const Countdown = () => {
           ))}
         </motion.div>
 
-        {/* Decorative Quote */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
