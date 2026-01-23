@@ -20,7 +20,7 @@ const Footer = () => {
           
           {/* Message */}
           <p className="text-xl text-foreground/90 mb-8 font-medium drop-shadow-sm">
-            شكراً لمشاركتنا فرحتنا
+            شكراً لحضوركم فرحتنا
           </p>
 
           {/* Decorative element */}
@@ -40,7 +40,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-sm text-foreground/70 font-medium">
-            © ٢٠٢٥ يحيى و آية
+            ©2026 يحيى و آية
           </p>
         </motion.div>
       </div>
