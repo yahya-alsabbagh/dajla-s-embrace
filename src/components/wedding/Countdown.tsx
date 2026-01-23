@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Countdown = () => {
   // Placeholder date - easily editable
-  const weddingDate = new Date("2025-06-20T19:00:00");
+  const weddingDate = new Date("2026-03-28T117:00:00");
 
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -47,7 +47,7 @@ const Countdown = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="section-title drop-shadow-sm">العد التنازلي</h2>
+          <h2 className="section-title drop-shadow-sm">باقي على عرسنا وعيدنا</h2>
           <p className="section-subtitle">لليلة العمر</p>
         </motion.div>
 
