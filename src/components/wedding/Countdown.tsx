@@ -3,32 +3,34 @@ import { motion } from "framer-motion";
 
 const Countdown = () => {
   // Placeholder date - easily editable
-  const weddingDate = new Date("2026-03-28T117:00:00");
-
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
-
+  // بغداد + صيغة ISO صحيحة
+  const weddingDate = new Date("2026-03-28T17:00:00+03:00");
+  
   useEffect(() => {
-    const timer = setInterval(() => {
+    const tick = () => {
       const now = new Date();
       const difference = weddingDate.getTime() - now.getTime();
-
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
-        });
+  
+      if (Number.isNaN(weddingDate.getTime())) return; // حماية
+  
+      if (difference <= 0) {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return;
       }
-    }, 1000);
-
+  
+      setTimeLeft({
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      });
+    };
+  
+    tick(); // يحدّث مباشرة بدون انتظار 1 ثانية
+    const timer = setInterval(tick, 1000);
     return () => clearInterval(timer);
-  }, []);
+  }, [weddingDate]);
+
 
   const timeUnits = [
     { value: timeLeft.days, label: "يوم" },
