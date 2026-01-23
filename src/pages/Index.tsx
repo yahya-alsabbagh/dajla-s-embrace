@@ -69,15 +69,15 @@ const Index = () => {
             />
             <PhotoFrame
               caption="لحظات الخطوبة"
-              src={`${import.meta.env.BASE_URL}1.JPG`}
+              src={`${import.meta.env.BASE_URL}2.JPG`}
             />
             <PhotoFrame
-              caption="معاً"
-              src={`${import.meta.env.BASE_URL}/1.JPG`}
+              caption="تخرج أيوتة"
+              src={`${import.meta.env.BASE_URL}/3.JPG`}
             />
             <PhotoFrame
-              caption="في انتظاركم"
-              src={`${import.meta.env.BASE_URL}1.JPG`}
+              caption="الحب مالي"
+              src={`${import.meta.env.BASE_URL}4.JPG`}
             />
           </div>
         </div>
