@@ -103,62 +103,51 @@
 // export default MusicPlayer;
 
 
-
 import MajedMp3 from "@/assets/Majed.mp3";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Volume2, VolumeX, Music } from "lucide-react";
+import { Volume2, VolumeX } from "lucide-react";
 
 const MusicPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [showPrompt, setShowPrompt] = useState(true);
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  // Music URL
   const musicUrl = MajedMp3;
 
-  useEffect(() => {
-    const handleFirstInteraction = () => {
-      setShowPrompt(false);
-      document.removeEventListener("click", handleFirstInteraction);
-    };
-
-    document.addEventListener("click", handleFirstInteraction);
-    return () => document.removeEventListener("click", handleFirstInteraction);
-  }, []);
-
   const toggleMusic = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play().catch(console.error);
-      }
-      setIsPlaying(!isPlaying);
+    if (!audioRef.current) return;
+
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+      return;
     }
+
+    audioRef.current
+      .play()
+      .then(() => setIsPlaying(true))
+      .catch(() => {
+        // بعض الموبايلات تمنع التشغيل قبل تفاعل المستخدم
+        // هنا ما نسوي أي بوب-اب، بس نخليها ساكتة
+      });
   };
 
   return (
     <>
       <audio ref={audioRef} src={musicUrl} loop />
 
-      {/* Wrapper حتى نكدر نحط الـ Label فوق الزر */}
+      {/* Wrapper ثابت للزر + الكتابة */}
       <div className="fixed bottom-6 left-6 z-50">
-        {/* ✅ Label فوق زر الأغنية */}
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.1 }}
-          className="absolute -top-12 left-1/2 -translate-x-1/2 pointer-events-none"
-        >
-          <div className="bg-card/90 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border border-accent/20">
-            <span className="text-sm font-bold text-foreground">
-              {isPlaying ? "إيقاف الأغنية" : "شغّل الأغنية"}
+        {/* ✅ كتابة توضيحية ناعمة فوق الزر (غير قابلة للضغط) */}
+        <div className="absolute -top-10 left-1/2 -translate-x-1/2 pointer-events-none select-none">
+          <div className="px-3 py-1.5 rounded-full bg-card/70 backdrop-blur-md border border-accent/15 shadow-sm">
+            <span className="text-xs font-semibold text-foreground/80">
+              شغّل الأغنية
             </span>
           </div>
-        </motion.div>
+        </div>
 
-        {/* Music Toggle Button */}
+        {/* زر السماعة فقط */}
         <motion.button
           onClick={toggleMusic}
           initial={{ opacity: 0, scale: 0 }}
@@ -189,38 +178,18 @@ const MusicPlayer = () => {
             )}
           </AnimatePresence>
 
-          {/* Animated ring when playing */}
+          {/* حلقة ناعمة أثناء التشغيل */}
           {isPlaying && (
             <motion.div
-              className="absolute inset-0 rounded-full border-2 border-accent"
-              animate={{ scale: [1, 1.2, 1], opacity: [1, 0, 1] }}
+              className="absolute inset-0 rounded-full border-2 border-accent/60"
+              animate={{ scale: [1, 1.15, 1], opacity: [1, 0.2, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
           )}
         </motion.button>
       </div>
-
-      {/* First-time prompt */}
-      <AnimatePresence>
-        {showPrompt && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            className="fixed bottom-24 left-6 z-50"
-          >
-            <div className="bg-card px-4 py-3 rounded-xl shadow-lg border border-accent/20 flex items-center gap-2">
-              <Music className="w-4 h-4 text-accent" />
-              <span className="text-sm text-foreground">
-                اضغط لتشغيل الموسيقى
-              </span>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   );
 };
 
 export default MusicPlayer;
-
