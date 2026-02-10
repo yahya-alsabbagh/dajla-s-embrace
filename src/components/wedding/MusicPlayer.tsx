@@ -137,9 +137,9 @@ const MusicPlayer = () => {
 
       {/* نفس مكان زر music-btn */}
       <div className="fixed bottom-6 left-6 z-50 w-14 h-14">
-        {/* ✅ مستطيل صغير فوق الزر بالضبط (غير قابل للضغط) */}
-        <div className="absolute -top-10 left-1/2 -translate-x-1/2 pointer-events-none select-none">
-          <div className="px-3 py-1.5 rounded-lg bg-card/80 backdrop-blur-md border border-accent/20 shadow-sm">
+        {/* ✅ مستطيل أفقي فوق الزر بالكامل (غير قابل للضغط) */}
+        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 pointer-events-none select-none">
+          <div className="px-4 py-2 rounded-xl bg-card/80 backdrop-blur-md border border-accent/20 shadow-sm whitespace-nowrap">
             <span className="text-xs font-semibold text-foreground/80">
               شغّل الأغنية
             </span>
@@ -192,3 +192,4 @@ const MusicPlayer = () => {
 };
 
 export default MusicPlayer;
+
