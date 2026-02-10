@@ -434,7 +434,7 @@ type RSVPStatus = "attending" | "not-attending" | "maybe" | null;
 
 const RSVPForm = () => {
   // ✅ ضع رابط Google Apps Script Web App هنا
-  const SCRIPT_URL = "PUT_YOUR_SCRIPT_URL_HERE";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzsBN62V2DwAs63t5VcCtG0izLCE8OWk-fFFRp8ev0fLJUz6lrSOYZiXn05nwwWZ_IR/exec";
 
   const [name, setName] = useState("");
   const [guestCount, setGuestCount] = useState("1");
@@ -462,7 +462,7 @@ const RSVPForm = () => {
     body.append("status", statusToArabic(status));
 
     try {
-      await fetch(https://script.google.com/macros/s/AKfycbzsBN62V2DwAs63t5VcCtG0izLCE8OWk-fFFRp8ev0fLJUz6lrSOYZiXn05nwwWZ_IR/exec, {
+      await fetch(SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
         body,
