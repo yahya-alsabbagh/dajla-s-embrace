@@ -102,7 +102,6 @@
 
 // export default MusicPlayer;
 
-
 import MajedMp3 from "@/assets/Majed.mp3";
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -192,4 +191,3 @@ const MusicPlayer = () => {
 };
 
 export default MusicPlayer;
-
