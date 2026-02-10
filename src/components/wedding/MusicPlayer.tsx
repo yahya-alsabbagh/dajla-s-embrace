@@ -139,8 +139,8 @@ const MusicPlayer = () => {
       {/* Wrapper ثابت للزر + الكتابة */}
       <div className="fixed bottom-6 left-6 z-50">
         {/* ✅ كتابة توضيحية ناعمة فوق الزر (غير قابلة للضغط) */}
-        <div className="absolute -top-10 left-1/2 -translate-x-1/2 pointer-events-none select-none">
-          <div className="px-3 py-1.5 rounded-full bg-card/70 backdrop-blur-md border border-accent/15 shadow-sm">
+        <div className="absolute inset-0 -z-10 pointer-events-none select-none flex items-center justify-center">
+          <div className="px-5 py-2 rounded-full bg-card/60 backdrop-blur-md border border-accent/15 shadow-sm">
             <span className="text-xs font-semibold text-foreground/80">
               شغّل الأغنية
             </span>
