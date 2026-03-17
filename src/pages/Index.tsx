@@ -68,7 +68,7 @@ const Index = () => {
               src={`${import.meta.env.BASE_URL}1.jpg`}
             />
             <PhotoFrame
-              caption="لحظات الخطوبة"
+              caption="شرعا وقانونا"
               src={`${import.meta.env.BASE_URL}2.jpg`}
             />
             <PhotoFrame
