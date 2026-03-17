@@ -43,7 +43,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-xl md:text-2xl text-foreground font-semibold mb-8 drop-shadow-sm"
         >
-          بحضوركم تتم أفراحنا
+          يشرفنا حضوركم لمشاركتنا فرحتنا
         </motion.p>
 
         <motion.div
