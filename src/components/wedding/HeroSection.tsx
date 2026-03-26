@@ -58,7 +58,7 @@ const HeroSection = () => {
         >
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
-            className="w-8 h-8 md:w-10 md:h-10 drop-shadow-md text-[#D4AF37]" /* لون ذهبي أنيق */
+            className="w-16 h-16 md:w-20 md:h-20 drop-shadow-md text-[#D4AF37]" /* لون ذهبي أنيق */
             fill="none" 
             viewBox="0 0 24 24" 
             stroke="currentColor" 
