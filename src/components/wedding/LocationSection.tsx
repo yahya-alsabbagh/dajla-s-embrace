@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const LocationSection = () => {
   // رابط خرائطك (يبقى مثل ما هو)
-  const mapsLink = "https://maps.app.goo.gl/KMZzM5iMS4KdR95p9?g_st=ic";
+  const mapsLink = "https://maps.app.goo.gl/9a98iPsGU9oGNd977?g_st=ic";
 
   // ✅ إحداثيات تقريبية (غيّرها لاحقًا)
   const mapLat = 33.3152;
