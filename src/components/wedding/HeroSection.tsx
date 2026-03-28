@@ -46,6 +46,20 @@ const HeroSection = () => {
           يشرفنا حضوركم لمشاركتنا فرحتنا
         </motion.p>
 
+
+      {/* عبارة منع التصوير */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="text-sm md:text-base text-foreground/80 font-medium mb-8 drop-shadow-sm px-4"
+        >
+          <p className="mb-1">حضوركم هو أجمل صورة، نرجو منكم ترك الهواتف ومشاركتنا اللحظة بقلوبكم</p>
+          <p className="text-accent font-semibold">لطفاً ومحبة نرجو منكم عدم التصوير</p>
+        </motion.div>
+
+
+        
         {/* السهم الذهبي المتحرك المضاف هنا */}
         <motion.div
           initial={{ opacity: 0 }}
