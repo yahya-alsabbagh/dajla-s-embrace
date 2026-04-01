@@ -2,15 +2,14 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Wedding invite link:
+https://yahya-alsabbagh.github.io/dajla-s-embrace/?v=1
 
-## How can I edit this code?
+Data sheet for vesetors:
+https://docs.google.com/spreadsheets/d/1l5SBoBHjzeC0kFU9m9hMRy9C_XZlOEsCOQglPMHRzSw/edit?resourcekey=&gid=1314710775#gid=1314710775
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Appscript:
+https://script.google.com/u/0/home/projects/1ukByrwJOfyOC08BpsWMHdWGb30Aoiaw463RwP7uP9Qnsd51BVJDNnHdN/edit
 
 Changes made via Lovable will be committed automatically to this repo.
 
