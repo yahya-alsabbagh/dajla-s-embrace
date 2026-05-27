@@ -30,11 +30,11 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4"
         >
-          <span className="text-gold-gradient drop-shadow-lg">يحيى</span>
+          <span className="text-gold-gradient drop-shadow-lg">ياسر</span>
           <span className="text-accent mx-4 text-4xl md:text-5xl drop-shadow-md">
             ✦
           </span>
-          <span className="text-gold-gradient drop-shadow-lg">آية</span>
+          <span className="text-gold-gradient drop-shadow-lg">عُلا</span>
         </motion.h1>
 
         <motion.p

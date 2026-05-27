@@ -72,7 +72,7 @@ const Index = () => {
               src={`${import.meta.env.BASE_URL}2.jpg`}
             />
             <PhotoFrame
-              caption="تخرج أيوتة"
+              caption="تخرج علّوشة"
               src={`${import.meta.env.BASE_URL}3.jpg`}
             />
             <PhotoFrame

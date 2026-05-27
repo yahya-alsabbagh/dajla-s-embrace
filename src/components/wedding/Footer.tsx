@@ -13,9 +13,9 @@ const Footer = () => {
         >
           {/* Names */}
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-gold-gradient drop-shadow-lg">يحيى</span>
+            <span className="text-gold-gradient drop-shadow-lg">ياسر</span>
             <span className="text-accent mx-3 drop-shadow-md">♥</span>
-            <span className="text-gold-gradient drop-shadow-lg">آية</span>
+            <span className="text-gold-gradient drop-shadow-lg">عُلا</span>
           </h2>
           
           {/* Message */}
@@ -40,7 +40,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-sm text-foreground/70 font-medium">
-            ©2026 يحيى و آية
+            ©2026 ياسر و عُلا
           </p>
         </motion.div>
       </div>
