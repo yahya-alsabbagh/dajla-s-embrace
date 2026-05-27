@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Countdown = () => {
   // ✅ تاريخ صحيح + تايمزون بغداد
   const weddingDate = useMemo(
-    () => new Date("2026-03-28T17:00:00+03:00"),
+    () => new Date("2026-10-28T17:00:00+03:00"),
     []
   );
 
@@ -14,7 +14,7 @@ const Countdown = () => {
     minutes: 0,
     seconds: 0,
   });
-  
+
   const [isMarried, setIsMarried] = useState(false);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Countdown = () => {
 
       const now = Date.now();
       const isPast = now >= target;
-      
+
       // Calculate absolute difference to count down OR up
       const difference = Math.abs(target - now);
 
