@@ -6,15 +6,6 @@ const LocationSection = () => {
   // رابط خرائطك (يبقى مثل ما هو)
   const mapsLink = "https://maps.app.goo.gl/9a98iPsGU9oGNd977?g_st=ic";
 
-  // ✅ إحداثيات تقريبية (غيّرها لاحقًا)
-  const mapLat = 33.3152;
-  const mapLng = 44.3940;
-
-  // ✅ صورة معاينة (Static Map) بدون API Key
-  const staticMapUrl =
-    `https://staticmap.openstreetmap.de/staticmap.php?center=${mapLat},${mapLng}` +
-    `&zoom=15&size=900x420&maptype=mapnik&markers=${mapLat},${mapLng},red-pushpin`;
-
   const venueInfo = {
     name: "قاعة الريان الملكية",
     address: "بغداد - الوزيرية",
@@ -42,11 +33,6 @@ const LocationSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="wedding-card text-center backdrop-blur-md"
         >
-
-
-
-          
-                    
           {/* ✅ Map Preview (Google Embed) */}
           <div className="relative h-48 md:h-64 rounded-xl overflow-hidden mb-6 bg-tigris/10">
             <iframe
