@@ -41,7 +41,7 @@ const EventDetails = () => {
           className="text-center mb-12"
         >
           <h2 className="section-title drop-shadow-sm">تفاصيل الحفل</h2>
-          <p className="section-subtitle"></p>
+          <p className="section-subtitle">نتشرف بحضوركم</p>
         </motion.div>
 
         <motion.div

@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 
 const Countdown = () => {
-  // ✅ تاريخ صحيح + تايمزون بغداد (غيّره لاحقًا)
+  // ✅ تاريخ صحيح + تايمزون بغداد
   const weddingDate = useMemo(
     () => new Date("2026-03-28T17:00:00+03:00"),
     []
@@ -14,19 +14,21 @@ const Countdown = () => {
     minutes: 0,
     seconds: 0,
   });
+  
+  const [isMarried, setIsMarried] = useState(false);
 
   useEffect(() => {
     const tick = () => {
       const target = weddingDate.getTime();
       if (Number.isNaN(target)) return;
 
-      const difference = target - Date.now();
+      const now = Date.now();
+      const isPast = now >= target;
+      
+      // Calculate absolute difference to count down OR up
+      const difference = Math.abs(target - now);
 
-      if (difference <= 0) {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-        return;
-      }
-
+      setIsMarried(isPast);
       setTimeLeft({
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
@@ -57,8 +59,12 @@ const Countdown = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="section-title drop-shadow-sm">باقي على عرسنا وعيدنا</h2>
-          <p className="section-subtitle">لليلة العمر</p>
+          <h2 className="section-title drop-shadow-sm">
+            {isMarried ? "مضى على زفافنا" : "باقي على عرسنا وعيدنا"}
+          </h2>
+          <p className="section-subtitle">
+            {isMarried ? "أيام من الحب والود" : "لليلة العمر"}
+          </p>
         </motion.div>
 
         <motion.div
@@ -100,7 +106,7 @@ const Countdown = () => {
             <span className="text-accent drop-shadow-md">❧</span>
           </div>
           <p className="text-lg text-foreground/90 italic font-medium drop-shadow-sm">
-            وجودكم يكمّل بهجتنا
+            {isMarried ? "معاً إلى الأبد" : "وجودكم يكمّل بهجتنا"}
           </p>
         </motion.div>
       </div>
